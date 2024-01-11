@@ -44,7 +44,7 @@
                     <div
                         v-for="message in feed"
                         :key="message.id"
-                        class="max-w-64"
+                        class="w-full"
                     >
                         <div v-if="message.isUser" class="flex flex-col">
                             <div class="flex gap-x-2 items-center">
@@ -115,9 +115,10 @@
 </template>
 
 <script setup lang="ts">
-// const { $axios: axios } = useContext();
-
-// const { $openai } = useContext();
+import axios from "axios";
+import { useRuntimeConfig } from "nuxt/app";
+import { onMounted, ref } from "vue";
+const runtimeConfig = useRuntimeConfig();
 
 type Message = {
     id: number;
@@ -128,7 +129,6 @@ type Message = {
 const props = withDefaults(
     defineProps<{
         title?: string;
-        envVarName: string;
         firstMessage?: string;
     }>(),
     {
@@ -147,14 +147,14 @@ const message = ref("");
 const feedDiv = ref<HTMLDivElement>();
 const completing = ref(false);
 
-// const http = axios.create({
-//     baseURL: "https://api.openai.com/v1/chat",
-//     headers: {
-//         "Content-Type": "application/json",
-//         Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-//         "OpenAI-Organization": process.env.OPENAI_ORG_ID,
-//     },
-// });
+const http = axios.create({
+    baseURL: "https://api.openai.com/v1/chat",
+    headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${runtimeConfig.public.openaiApiKey}`,
+        "OpenAI-Organization": process.env.OPENAI_ORG_ID,
+    },
+});
 
 async function createMessage() {
     if (!message.value) return;
@@ -170,19 +170,19 @@ async function createMessage() {
 
     completing.value = true;
 
-    // http.post("/completions", {
-    //     model: "gpt-3.5-turbo",
-    //     messages: [{ role: "user", content: prompt }],
-    //     temperature: 0.7,
-    // }).then((res) => {
-    //     console.log(res.data.choices[0].message.content);
-    //     feed.value.push({
-    //         text: res.data.choices[0].message.content,
-    //         isUser: false,
-    //         id: Math.random(),
-    //     });
-    //     completing.value = false;
-    // });
+    http.post("/completions", {
+        model: "gpt-3.5-turbo",
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.7,
+    }).then((res) => {
+        console.log(res.data.choices[0].message.content);
+        feed.value.push({
+            text: res.data.choices[0].message.content,
+            isUser: false,
+            id: Math.random(),
+        });
+        completing.value = false;
+    });
 }
 
 function scrollToBottomOfFeed() {
