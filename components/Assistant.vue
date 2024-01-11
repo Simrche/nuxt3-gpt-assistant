@@ -49,7 +49,7 @@
                         <div v-if="message.isUser" class="flex flex-col">
                             <div class="flex gap-x-2 items-center">
                                 <img
-                                    src="~/assets/profil.png"
+                                    src="../assets/profil.png"
                                     class="rounded-full h-8 w-8"
                                 />
                                 <p class="rounded-md bg-gray-200 text-xs p-2">
@@ -63,7 +63,7 @@
                                     {{ message.text }}
                                 </p>
                                 <img
-                                    src="~/assets/robot.png"
+                                    src="../assets/robot.png"
                                     class="rounded-full h-8 w-8"
                                 />
                             </div>
@@ -85,7 +85,7 @@
                                 ></div>
                             </div>
                             <img
-                                src="~/assets/robot.png"
+                                src="../assets/robot.png"
                                 class="rounded-full h-8 w-8"
                             />
                         </div>
@@ -102,14 +102,14 @@
                     class="rounded-md flex bg-slate-200 h-10 text-white w-12 items-center justify-center"
                     @click="createMessage()"
                 >
-                    <img src="~/assets/envoyer.png" class="w-6" />
+                    <img src="../assets/envoyer.png" class="w-6" />
                 </button>
             </div>
         </div>
         <div
             class="border-black border rounded-full cursor-pointer flex bg-slate-400 h-12 shadow-xl text-white right-5 bottom-5 w-12 fixed items-center justify-center"
         >
-            <img @click="open = !open" src="~/assets/robot.png" class="w-8" />
+            <img @click="open = !open" src="../assets/robot.png" class="w-8" />
         </div>
     </div>
 </template>
