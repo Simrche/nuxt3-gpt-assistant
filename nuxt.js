@@ -1,11 +1,12 @@
-import { defineNuxtModule } from "@nuxt/kit";
-import { join } from "pathe";
+import { createResolver, defineNuxtModule } from "@nuxt/kit";
 
 export default defineNuxtModule({
     hooks: {
-        "components:dirs"(dirs) {
+        "components:dirs": (dirs) => {
+            const { resolve } = createResolver(import.meta.url);
+            // Add ./components dir to the list
             dirs.push({
-                path: join(__dirname, "components"),
+                path: resolve("./components"),
                 prefix: "robot",
             });
         },
