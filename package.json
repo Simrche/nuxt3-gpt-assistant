@@ -1,0 +1,28 @@
+{
+    "name": "nuxt-gpt-assistant",
+    "version": "1.0.0",
+    "description": "Nuxt 3 GPT assistant componenents",
+    "main": "nuxt.js",
+    "peerDependencies": {
+        "nuxt3": "latest"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Simrche/nuxt3-gpt-assistant.git"
+    },
+    "keywords": [
+        "Nuxt3",
+        "GPT",
+        "assistant",
+        "Robot"
+    ],
+    "author": "Simon Roche",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Simrche/nuxt3-gpt-assistant/issues"
+    },
+    "homepage": "https://github.com/Simrche/nuxt3-gpt-assistant#readme"
+}
