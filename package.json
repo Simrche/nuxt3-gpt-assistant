@@ -1,6 +1,6 @@
 {
     "name": "nuxt-gpt-assistant",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Nuxt 3 GPT assistant componenents",
     "main": "nuxt.js",
     "scripts": {
