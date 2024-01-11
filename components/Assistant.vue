@@ -115,9 +115,9 @@
 </template>
 
 <script setup lang="ts">
-const { $axios: axios } = useContext();
+// const { $axios: axios } = useContext();
 
-const { $openai } = useContext();
+// const { $openai } = useContext();
 
 type Message = {
     id: number;
@@ -147,14 +147,14 @@ const message = ref("");
 const feedDiv = ref<HTMLDivElement>();
 const completing = ref(false);
 
-const http = axios.create({
-    baseURL: "https://api.openai.com/v1/chat",
-    headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-        "OpenAI-Organization": process.env.OPENAI_ORG_ID,
-    },
-});
+// const http = axios.create({
+//     baseURL: "https://api.openai.com/v1/chat",
+//     headers: {
+//         "Content-Type": "application/json",
+//         Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+//         "OpenAI-Organization": process.env.OPENAI_ORG_ID,
+//     },
+// });
 
 async function createMessage() {
     if (!message.value) return;
@@ -170,19 +170,19 @@ async function createMessage() {
 
     completing.value = true;
 
-    http.post("/completions", {
-        model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: prompt }],
-        temperature: 0.7,
-    }).then((res) => {
-        console.log(res.data.choices[0].message.content);
-        feed.value.push({
-            text: res.data.choices[0].message.content,
-            isUser: false,
-            id: Math.random(),
-        });
-        completing.value = false;
-    });
+    // http.post("/completions", {
+    //     model: "gpt-3.5-turbo",
+    //     messages: [{ role: "user", content: prompt }],
+    //     temperature: 0.7,
+    // }).then((res) => {
+    //     console.log(res.data.choices[0].message.content);
+    //     feed.value.push({
+    //         text: res.data.choices[0].message.content,
+    //         isUser: false,
+    //         id: Math.random(),
+    //     });
+    //     completing.value = false;
+    // });
 }
 
 function scrollToBottomOfFeed() {
