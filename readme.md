@@ -7,6 +7,14 @@ This project gives you a gpt support on your applications. For help the client o
 To use this component, axios and tailwind are required and set on the project.
 
 ```bash
+npm install @nuxtjs/tailwindcss
+```
+
+```bash
+npm install axios
+```
+
+```bash
 npm install nuxt-gpt-assistant
 ```
 
