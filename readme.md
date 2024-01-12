@@ -36,7 +36,7 @@ export default defineNuxtConfig({
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
-        ...,
+        // ...,
         "./node_modules/nuxt-gpt-assistant/**/*.{vue,js,ts,jsx,tsx}",
     ],
     theme: {
@@ -61,4 +61,4 @@ module.exports = {
 </style>
 ```
 
-Then you will see appear a little robot on the corner bottom left :)
+Then you will see appear a little robot on the bottom left corner :)
