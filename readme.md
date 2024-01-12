@@ -1,6 +1,6 @@
 # Nuxt GPT Assistant
 
-This project gives you a gpt support on your applications. For help the client or you as a developer.
+This library gives you a gpt support on your applications. For both users and developers.
 
 ## Setup
 
@@ -39,11 +39,13 @@ npm install axios
 npm install nuxt-gpt-assistant
 ```
 
-Setup your API key in .env
+### Setup your API key in .env
 
 ```env
 OPENAI_API_KEY=<apiKey>
 ```
+
+### Configure nuxt project
 
 ```ts
 // nuxt.config.ts
