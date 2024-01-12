@@ -18,19 +18,27 @@
             >
                 <div class="flex h-8 gap-x-2 items-center justify-between">
                     <p class="font-bold text-sm">{{ title }}</p>
-                    <div class="flex gap-x-4">
-                        <i
+                    <div class="flex gap-x-4 items-center">
+                        <img
+                            v-if="!expanded"
+                            src="../assets/expand.png"
+                            class="cursor-pointer h-5 w-5"
+                            alt="expand"
                             @click="expanded = !expanded"
-                            :class="`cursor-pointer text-xl mdi ${
-                                expanded
-                                    ? 'mdi-arrow-collapse'
-                                    : 'mdi-arrow-expand'
-                            }`"
-                        ></i>
-                        <i
+                        />
+                        <img
+                            v-else
+                            src="../assets/collapse.png"
+                            class="cursor-pointer h-5 w-5"
+                            alt="collapse"
+                            @click="expanded = !expanded"
+                        />
+                        <img
+                            src="../assets/close.png"
+                            class="cursor-pointer h-4 w-4"
+                            alt="close"
                             @click="open = false"
-                            class="cursor-pointer text-xl mdi mdi-close"
-                        ></i>
+                        />
                     </div>
                 </div>
                 <div
