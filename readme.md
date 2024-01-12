@@ -2,17 +2,38 @@
 
 This project gives you a gpt support on your applications. For help the client or you as a developer.
 
-### Setup
+## Setup
 
 To use this component, axios and tailwind are required and set on the project.
+
+### Install Tailwind if not already used
 
 ```bash
 npm install @nuxtjs/tailwindcss
 ```
+Create tailwind.config.js
+```js
+// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+    content: [
+        // ...,
+        "./node_modules/nuxt-gpt-assistant/**/*.{vue,js,ts,jsx,tsx}",
+    ],
+    theme: {
+        extend: {},
+    },
+    plugins: [],
+};
+```
+
+### Install Axios if not already used
 
 ```bash
 npm install axios
 ```
+
+### Install magnificient GPT Assistant ✨
 
 ```bash
 npm install nuxt-gpt-assistant
@@ -43,22 +64,6 @@ export default defineNuxtConfig({
         },
     },
 });
-```
-
-```js
-// tailwind.config.js
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-    content: [
-        // ...,
-        "./node_modules/nuxt-gpt-assistant/**/*.{vue,js,ts,jsx,tsx}",
-    ],
-    theme: {
-        extend: {},
-    },
-    plugins: [],
-};
-
 ```
 
 ### Utilisation
