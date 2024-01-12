@@ -82,4 +82,4 @@ export default defineNuxtConfig({
 </style>
 ```
 
-Then you will see appear a little robot on the bottom left corner :)
+Then you will see appear a little robot on the bottom left corner 😋
