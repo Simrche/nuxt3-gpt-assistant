@@ -18,6 +18,12 @@ npm install axios
 npm install nuxt-gpt-assistant
 ```
 
+Setup your API key in .env
+
+```env
+OPENAI_API_KEY=<apiKey>
+```
+
 ```ts
 // nuxt.config.ts
 export default defineNuxtConfig({
